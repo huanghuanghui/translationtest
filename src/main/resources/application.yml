@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.34:3306/ssr_test_20190904?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false
+    username: root
+    password: mysql#JN99@dev
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  file.max-size: 400MB
+  level:
+    com.ssr.translationtest: debug
+
