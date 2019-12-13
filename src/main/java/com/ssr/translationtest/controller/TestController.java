@@ -1,5 +1,6 @@
 package com.ssr.translationtest.controller;
 
+import com.ssr.translationtest.entity.OrderEntity;
 import com.ssr.translationtest.entity.TxEntity;
 import com.ssr.translationtest.service.Environment;
 import com.ssr.translationtest.service.TxService;
@@ -7,6 +8,7 @@ import com.ssr.translationtest.service.impl.AddStrategy;
 import com.ssr.translationtest.service.impl.SubtractStrategy;
 import com.ssr.translationtest.simplefactory.entity.Message;
 import com.ssr.translationtest.simplefactory.service.ExecuteFactoryService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Despriction
  */
 @RestController
+@Log4j2
 public class TestController {
 
   @Autowired
@@ -44,5 +47,14 @@ public class TestController {
   @PostMapping("/factory")
   public void strategy(@RequestBody Message message){
     executeFactoryService.execute(message);
+  }
+
+  @PostMapping("/to-json")
+  public void toJson(@RequestBody OrderEntity order){
+    String json =order.toString();
+    log.info(json);
+    OrderEntity order2=(OrderEntity) order.toEntity(json);
+    order2.setCompanyId(1037);
+    log.info(order2.toString());
   }
 }
