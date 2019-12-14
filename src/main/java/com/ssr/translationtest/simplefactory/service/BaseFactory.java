@@ -7,4 +7,6 @@ package com.ssr.translationtest.simplefactory.service;
  */
 public interface BaseFactory {
   HandleFactory getService(Integer type);
+
+  HandleFactory getService2(Integer type);
 }

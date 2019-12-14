@@ -20,4 +20,9 @@ public class ExecuteFactoryServiceImpl implements ExecuteFactoryService {
   public void execute(Message message) {
     baseFactory.getService(message.getType()).handle(message);
   }
+
+  @Override
+  public void execute2(Message message) {
+    baseFactory.getService(message.getType()).handle(message);
+  }
 }

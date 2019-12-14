@@ -49,6 +49,11 @@ public class TestController {
     executeFactoryService.execute(message);
   }
 
+  @PostMapping("/factory2")
+  public void strategy2(@RequestBody Message message){
+    executeFactoryService.execute2(message);
+  }
+
   @PostMapping("/to-json")
   public void toJson(@RequestBody OrderEntity order){
     String json =order.toString();

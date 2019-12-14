@@ -9,4 +9,5 @@ import com.ssr.translationtest.simplefactory.entity.Message;
  */
 public interface ExecuteFactoryService {
   void execute(Message message);
+  void execute2(Message message);
 }
