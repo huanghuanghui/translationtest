@@ -1,5 +1,6 @@
 package com.ssr.translationtest.controller;
 
+import com.ssr.translationtest.enmu.RoleEnum;
 import com.ssr.translationtest.entity.OrderEntity;
 import com.ssr.translationtest.entity.TxEntity;
 import com.ssr.translationtest.service.Environment;
@@ -61,5 +62,10 @@ public class TestController {
     OrderEntity order2=(OrderEntity) order.toEntity(json);
     order2.setCompanyId(1037);
     log.info(order2.toString());
+  }
+
+  @GetMapping("/judge")
+  public void judge(String roleName){
+    log.info(RoleEnum.valueOf(roleName).op());
   }
 }
