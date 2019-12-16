@@ -39,9 +39,9 @@ public class TestController {
   @GetMapping("/strategy")
   public int strategy(int num1,int num2){
     if (num1>num2){
-      return new Environment(new SubtractStrategy()).caculate(num1,num2);
+      return new Environment(new SubtractStrategy()).calculation(num1,num2);
     }
-    return new Environment(new AddStrategy()).caculate(num1,num2);
+    return new Environment(new AddStrategy()).calculation(num1,num2);
   }
 
   @PostMapping("/factory")

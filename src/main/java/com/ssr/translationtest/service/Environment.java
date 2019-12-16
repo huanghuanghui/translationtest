@@ -12,7 +12,7 @@ public class Environment {
     this.strategy = strategy;
   }
 
-  public int caculate(int num1,int num2){
+  public int calculation(int num1,int num2){
     return strategy.calc(num1,num2);
   }
 }
