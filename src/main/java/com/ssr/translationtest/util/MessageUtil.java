@@ -1,4 +1,4 @@
-package com.ssr.translationtest.simplefactory.util;
+package com.ssr.translationtest.util;
 
 import com.ssr.translationtest.simplefactory.factory.OrderNoDispatchFactory;
 import com.ssr.translationtest.simplefactory.factory.OrderSystemNewFactory;

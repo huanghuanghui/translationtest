@@ -9,6 +9,7 @@ import com.ssr.translationtest.service.impl.AddStrategy;
 import com.ssr.translationtest.service.impl.SubtractStrategy;
 import com.ssr.translationtest.simplefactory.entity.Message;
 import com.ssr.translationtest.simplefactory.service.ExecuteFactoryService;
+import com.ssr.translationtest.util.RedisHandle;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,12 +17,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 /**
  * @author hhh
  * @date 2019/11/6 16:14
  * @Despriction
  */
-@RestController
+@RestController("/v1/test")
 @Log4j2
 public class TestController {
 
@@ -30,6 +33,9 @@ public class TestController {
 
   @Autowired
   private ExecuteFactoryService executeFactoryService;
+
+  @Autowired
+  private RedisHandle redisHandle;
 
   @PostMapping("/tx")
   public String tx(@RequestBody TxEntity tx){
@@ -67,5 +73,13 @@ public class TestController {
   @GetMapping("/judge")
   public void judge(String roleName){
     log.info(RoleEnum.valueOf(roleName).op());
+  }
+
+  @GetMapping("/set-key")
+  public void setKey(){
+    UUID uuid = UUID.randomUUID();
+    long a  =redisHandle.incr(uuid.toString());
+    log.info(a);
+
   }
 }

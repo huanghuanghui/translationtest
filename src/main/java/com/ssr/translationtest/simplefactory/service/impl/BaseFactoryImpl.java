@@ -2,8 +2,8 @@ package com.ssr.translationtest.simplefactory.service.impl;
 
 import com.ssr.translationtest.simplefactory.service.HandleFactory;
 import com.ssr.translationtest.simplefactory.service.BaseFactory;
-import com.ssr.translationtest.simplefactory.util.MessageUtil;
-import com.ssr.translationtest.simplefactory.util.SpringConfigTool;
+import com.ssr.translationtest.util.MessageUtil;
+import com.ssr.translationtest.util.SpringConfigTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Service;

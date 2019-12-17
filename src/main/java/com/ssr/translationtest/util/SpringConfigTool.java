@@ -1,4 +1,4 @@
-package com.ssr.translationtest.simplefactory.util;
+package com.ssr.translationtest.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
