@@ -10,6 +10,7 @@ import com.ssr.translationtest.service.impl.SubtractStrategy;
 import com.ssr.translationtest.simplefactory.entity.Message;
 import com.ssr.translationtest.simplefactory.service.ExecuteFactoryService;
 import com.ssr.translationtest.util.RedisHandle;
+import com.ssr.translationtest.util.SpringConfigTool;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -82,4 +83,10 @@ public class TestController {
     log.info(a);
 
   }
+
+  @GetMapping("/condition")
+  public String condition(){
+    return SpringConfigTool.getBean("helloWorld").toString();
+  }
+
 }
